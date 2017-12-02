@@ -25,47 +25,24 @@ Explanation
 When we perform  left rotations, the array undergoes the following sequence of changes:
 
 Thus, we print the array's final state as a single line of space-separated values, which is 5 1 2 3 4. */
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+class Solution {
 
-#include <map>
-#include <set>
-#include <list>
-#include <cmath>
-#include <ctime>
-#include <deque>
-#include <queue>
-#include <stack>
-#include <string>
-#include <bitset>
-#include <cstdio>
-#include <limits>
-#include <vector>
-#include <climits>
-#include <cstring>
-#include <cstdlib>
-#include <fstream>
-#include <numeric>
-#include <sstream>
-#include <iostream>
-#include <algorithm>
-#include <unordered_map>
-
-using namespace std;
-
-vector<int> array_left_rotation(vector<int> a, int n, int k) {
-    
-}
-
-int main(){
-    int n;
-    int k;
-    cin >> n >> k;
-    vector<int> a(n);
-    for(int a_i = 0;a_i < n;a_i++){
-        cin >> a[a_i];
+    static void Main(String[] args) {
+        string[] tokens_n = Console.ReadLine().Split(' ');
+        int lenArr = Convert.ToInt32(tokens_n[0]);
+        int numRot = Convert.ToInt32(tokens_n[1]);
+        string[] a_temp = Console.ReadLine().Split(' ');
+        int[] a = Array.ConvertAll(a_temp,Int32.Parse);
+        int len = lenArr;
+        
+        for (int ct = numRot; lenArr > 0; lenArr--, ct++) {
+            if(ct == len)
+                ct = 0;
+            Console.Out.Write(a[ct] + " ");
+        }
     }
-    vector<int> output = array_left_rotation(a, n, k);
-    for(int i = 0; i < n;i++)
-        cout << output[i] << " ";
-    cout << endl;
-    return 0;
 }
